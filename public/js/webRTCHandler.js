@@ -12,13 +12,7 @@ const defaultConstraints = {
     video: true
 };
 
-const configuration = {
-    iceServers:[
-        {
-            urls:'stun:stun.l.google.com:13902'
-        }
-    ]
-};
+const configuration = { 'iceServers': [{ 'urls': 'stun:74.125.142.127:19302' }] };
 
 export const getLocalPreview = ()=>{
     navigator.mediaDevices.getUserMedia(defaultConstraints)
