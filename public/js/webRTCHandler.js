@@ -12,7 +12,28 @@ const defaultConstraints = {
     video: true
 };
 
-const configuration = { 'iceServers': [{ 'urls': 'stun:74.125.142.127:19302' }] };
+const configuration = {
+  iceServers: [
+    {
+      urls: "stun:openrelay.metered.ca:80",
+    },
+    {
+      urls: "turn:openrelay.metered.ca:80",
+      username: "openrelayproject",
+      credential: "openrelayproject",
+    },
+    {
+      urls: "turn:openrelay.metered.ca:443",
+      username: "openrelayproject",
+      credential: "openrelayproject",
+    },
+    {
+      urls: "turn:openrelay.metered.ca:443?transport=tcp",
+      username: "openrelayproject",
+      credential: "openrelayproject",
+    },
+  ],
+};
 
 export const getLocalPreview = ()=>{
     navigator.mediaDevices.getUserMedia(defaultConstraints)
